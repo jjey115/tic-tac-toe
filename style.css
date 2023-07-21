@@ -1,0 +1,116 @@
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 50px;
+    font-weight: 900;
+    font-family: sans-serif;
+}
+
+.board {
+    height: 50vw;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.row1 div {
+    border-bottom: 5px solid black;
+}
+
+#r1c2, #r2c2, #r3c2 {
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+
+.row3 div {
+    border-top: 5px solid black;
+}
+
+.row1,
+.row2,
+.row3 {
+    display: flex;
+    height: 33.333333%;
+    width: auto;
+    flex-direction: row;
+}
+
+.row1 div,
+.row2 div,
+.row3 div {
+    display: flex;
+    height: auto;
+    width: 33.333333%;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.✕::after {
+    opacity: 0;
+    content: "✕";
+    transition: all 0.2s;
+}
+
+.✕:hover:after {
+    color: black;
+    opacity: 0.3;
+}
+
+.◯::after {
+    opacity: 0;
+    content: "◯";
+    transition: all 0.2s;
+}
+
+.◯:hover:after {
+    color: black;
+    opacity: 0.3;
+}
+
+.freeze::after {
+    content: "";
+}
+
+.message {
+    margin-top: 40px;
+    /* border: 1px solid black; */
+    font-size: 40px;
+    font-weight: normal;
+    height: 1em;
+}
+
+.controls {
+    display: flex;
+}
+
+.nxt {
+    font-size: 25;
+    text-align: center;
+    margin-top: 15px !important;
+}
+
+.back, .reset, .forward, .nxt {
+    cursor: default;
+    margin: 0px 20px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.back::selection, .reset::selection, .forward::selection, .message::selection, .nxt::selection {
+    background: transparent;
+}
+
+.back:active, .reset:active, .forward:active, .nxt:active {
+    color: gray;
+}
